@@ -4,9 +4,9 @@ Works both for timescale and serial x-axes.
 
 # Preview chart
 add a 
-  '<div>
+  <p><div>
 		<canvas id="canvasPreview"></canvas>
-	</div>'
+	</div></p>
 add option preview:{id:'yourPreviewCanvaid'}
 
 # Slider on Preview chart
