@@ -3,7 +3,7 @@ A Chart.js plugin to have preview chart and zoom/slider use
 Works both for timescale and serial x-axes.
 
 # Preview chart
-add div<canvas id="canvasPreview"></canvas>div
+add a canvas element with id="canvasPreview", encapsuled in a div
 add option preview:{id:'yourPreviewCanvaid'}
 
 # Slider on Preview chart
