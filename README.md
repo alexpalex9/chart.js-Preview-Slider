@@ -21,5 +21,5 @@ add option slider:{id:'idOfSliderDiv','autostart':true}
 # To improve:
 - left to right y-axes alignement between main and preview Chart
 
-Please use basic example and test.
+Please use basic example.
 
