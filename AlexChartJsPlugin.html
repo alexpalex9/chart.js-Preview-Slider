@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Preview/Slider Chart</title>
+    <script src="jquery.min.js"></script>
+    <script src="Chart.bundle.min.js"></script>
+    <script src="homeChartPlugin5.js"></script>
+    <script src="nouislider.js"></script>
+	<script src="utils.js"></script>
+	<link rel="stylesheet" href="nouislider.css" type="text/css" media="screen"/>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <canvas id="canvas"></canvas>
+    </div>
+	</div> 
+		<div id="slider">
+	</div>
+	<div>
+		<canvas id="canvasPreview" style="height:75px;z-index:9999999999999999"></canvas>
+	</div>
+    <button id="randomizeData">Randomize Data</button>
+    <script>
+        var chartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                type: 'line',
+                label: 'Dataset 1',
+                borderColor: window.chartColors.blue,
+                borderWidth: 2,
+                fill: false,
+                data: [
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor()
+                ]
+            }, {
+                type: 'bar',
+                label: 'Dataset 2',
+                backgroundColor: window.chartColors.red,
+                data: [
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor()
+                ],
+                borderColor: 'white',
+                borderWidth: 2
+            }, {
+                type: 'bar',
+                label: 'Dataset 3',
+                backgroundColor: window.chartColors.green,
+                data: [
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor(), 
+                    randomScalingFactor()
+                ]
+            }]
+
+        };
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myMixedChart = new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Chart.js Preview/Slider Chart'
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: true
+                    },
+					slider:{
+						id:'slider'
+					},
+					preview:{
+						id:'canvasPreview'
+					},
+					canvasId:'canvas'
+                }
+            });
+        };
+
+        document.getElementById('randomizeData').addEventListener('click', function() {
+            chartData.datasets.forEach(function(dataset) {
+                dataset.data = dataset.data.map(function() {
+                    return randomScalingFactor();
+                });
+            });
+            window.myMixedChart.update();
+        });
+    </script>
+</body>
+
+</html>
