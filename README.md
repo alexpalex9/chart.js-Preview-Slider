@@ -7,16 +7,9 @@ add a canvas element with id="canvasPreview", encapsuled in a div
 add option preview:{id:'yourPreviewCanvaid'}
 
 # Slider on Preview chart
-add
-<html>
-
-  </div> 
-		<div id="slider">
-	</div>
-
-{:/}
+add div with id="slider encapsuled in another div
 add option slider:{id:'idOfSliderDiv'}
-You can now play with slider
+-> You can now play with slider
 
 # Mouse/touch event 
 - click/move to navigate in main chart 
