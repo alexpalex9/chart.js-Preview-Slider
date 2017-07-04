@@ -8,9 +8,13 @@ add option preview:{id:'yourPreviewCanvaid'}
 
 # Slider on Preview chart
 add
+{::nomarkdown}
+
   </div> 
 		<div id="slider">
 	</div>
+
+{:/}
 add option slider:{id:'idOfSliderDiv'}
 You can now play with slider
 
