@@ -15,8 +15,8 @@ Works both for timescale and serial x-axes.
 - click/move to navigate in main chart 
 - double click to zoom on focus area in main chart 
 
-# preset slider position
-add option slider:{id:'idOfSliderDiv','autostart':true}
+# preset slider position according screen width
+- add option slider:{id:'idOfSliderDiv','autostart':true}
 
 # To improve:
 - left to right y-axes alignement between main and preview Chart
